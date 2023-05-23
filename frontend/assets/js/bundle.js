@@ -1,25 +1,59 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/A0018-webpack/index.ts":
-/*!************************************!*\
-  !*** ./src/A0018-webpack/index.ts ***!
-  \************************************/
+/***/ "./src/A0019-exercicio/form-control.ts":
+/*!*********************************************!*\
+  !*** ./src/A0019-exercicio/form-control.ts ***!
+  \*********************************************/
 /***/ (() => {
 
-throw new Error("Module build failed (from ./node_modules/ts-loader/index.js):\nError: \u001b[31merror while parsing tsconfig.json\u001b[39m\n    at Object.loader (C:\\Users\\andal\\OneDrive\\Documentos\\Courses\\cursojstypescript\\node_modules\\ts-loader\\dist\\index.js:17:18)");
+
+console.log('Mod');
+
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
 /******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/A0018-webpack/index.ts"]();
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
 /******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+var exports = __webpack_exports__;
+/*!************************************************!*\
+  !*** ./src/A0019-exercicio/A0019-exercicio.ts ***!
+  \************************************************/
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+__webpack_require__(/*! ./form-control */ "./src/A0019-exercicio/form-control.ts");
+
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map
