@@ -14,57 +14,55 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const isEmail_1 = __importDefault(__webpack_require__(/*! validator/lib/isEmail */ "./node_modules/validator/lib/isEmail.js"));
-(function validate() {
-    const SHOW_ERROR_MESSAGES = 'show-error-message';
-    const form = document.querySelector('.form');
-    const username = document.querySelector('.username');
-    const email = document.querySelector('.email');
-    const password = document.querySelector('.password');
-    const password2 = document.querySelector('.password2');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        hideErrorMessage(this);
-        checkForEmptyFields(username, email, password, password2);
-        checkEmail(email);
-        checkEqualPasswords(password, password2);
-        if (shouldSendForm(this))
-            console.log('FORMULÁRO ENVIADO');
+const SHOW_ERROR_MESSAGES = 'show-error-message';
+const form = document.querySelector('.form');
+const username = document.querySelector('.username');
+const email = document.querySelector('.email');
+const password = document.querySelector('.password');
+const password2 = document.querySelector('.password2');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hideErrorMessage(this);
+    checkForEmptyFields(username, email, password, password2);
+    checkEmail(email);
+    checkEqualPasswords(password, password2);
+    if (shouldSendForm(this))
+        console.log('FORMULÁRO ENVIADO');
+});
+function checkForEmptyFields(...inputs) {
+    inputs.forEach((input) => {
+        if (!input.value)
+            showErrorMessage(input, 'Campo não pode ficar vazio');
     });
-    function checkForEmptyFields(...inputs) {
-        inputs.forEach((input) => {
-            if (!input.value)
-                showErrorMessage(input, 'Campo não pode ficar vazio');
-        });
+}
+function checkEmail(input) {
+    if (!(0, isEmail_1.default)(input.value))
+        showErrorMessage(input, 'Email inválido');
+}
+function checkEqualPasswords(password, password2) {
+    if (password.value !== password2.value) {
+        showErrorMessage(password, 'Senhas precisam ser iguasi');
+        showErrorMessage(password2, 'Senhas precisam ser iguasi');
     }
-    function checkEmail(input) {
-        if (!(0, isEmail_1.default)(input.value))
-            showErrorMessage(input, 'Email inválido');
-    }
-    function checkEqualPasswords(password, password2) {
-        if (password.value !== password2.value) {
-            showErrorMessage(password, 'Senhas precisam ser iguasi');
-            showErrorMessage(password2, 'Senhas precisam ser iguasi');
-        }
-    }
-    function hideErrorMessage(form) {
-        form
-            .querySelectorAll('.' + SHOW_ERROR_MESSAGES)
-            .forEach((item) => item.classList.remove(SHOW_ERROR_MESSAGES));
-    }
-    function showErrorMessage(input, msg) {
-        const formFields = input.parentElement;
-        const errorMessage = formFields.querySelector('.error-message');
-        errorMessage.innerText = msg;
-        formFields.classList.add(SHOW_ERROR_MESSAGES);
-    }
-    function shouldSendForm(form) {
-        let send = true;
-        form
-            .querySelectorAll('.' + SHOW_ERROR_MESSAGES)
-            .forEach(() => (send = false));
-        return send;
-    }
-})();
+}
+function hideErrorMessage(form) {
+    form
+        .querySelectorAll('.' + SHOW_ERROR_MESSAGES)
+        .forEach((item) => item.classList.remove(SHOW_ERROR_MESSAGES));
+}
+function showErrorMessage(input, msg) {
+    const formFields = input.parentElement;
+    const errorMessage = formFields.querySelector('.error-message');
+    errorMessage.innerText = msg;
+    formFields.classList.add(SHOW_ERROR_MESSAGES);
+}
+function shouldSendForm(form) {
+    let send = true;
+    form
+        .querySelectorAll('.' + SHOW_ERROR_MESSAGES)
+        .forEach(() => (send = false));
+    return send;
+}
 
 
 /***/ }),

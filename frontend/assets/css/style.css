@@ -95,7 +95,7 @@ form button:hover {
   display: none;
 }
 
-.form .show-error-message {
+.form .show-error-message .error-message{
   display: block;
 }
 
