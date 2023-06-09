@@ -20,7 +20,10 @@ const person: Person = {
   salary: 3000,
 };
 
-export default function setFavoriteColor(person: Person, cor: favoriteColor): Person {
+export default function setFavoriteColor(
+  person: Person,
+  cor: favoriteColor,
+): Person {
   return { ...person, favoriteColor: cor };
 }
 
