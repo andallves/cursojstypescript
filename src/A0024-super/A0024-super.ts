@@ -29,7 +29,6 @@ export class Person {
 // quando criamos um constructor em uma subclasse para que ele não sobreescreva
 // o constructor da superclasse, então é preciso chamá-lo.
 export class Student extends Person {
-
   constructor(
     name: string,
     lastname: string,
