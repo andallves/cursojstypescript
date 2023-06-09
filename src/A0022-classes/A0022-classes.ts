@@ -8,7 +8,7 @@ export class Empresa {
     this.name = name;
     this.cnpj = cnpj;
   }
-
+  // quando criamos uma classe, também criamos um tipo
   addColaborador(colaborador: Colaborador): void {
     this.colaboradores.push(colaborador);
   }
